@@ -1,0 +1,130 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --bg-canvas: #fafaf9;
+    --navy-primary: #0f172a;
+    --rust-accent: #c2410c;
+  }
+
+  body {
+    background-color: var(--bg-canvas);
+    color: var(--navy-primary);
+    min-height: 100vh;
+    overflow-x: hidden;
+    font-feature-settings: "cv02", "cv03", "cv04", "cv11";
+  }
+
+  .dark body {
+    background-color: #090d16;
+    color: #f1f5f9;
+  }
+}
+
+/* Glassmorphism Classes */
+.glass-panel {
+  background: rgba(255, 255, 255, 0.65);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(15, 23, 42, 0.08);
+  box-shadow: 0 8px 32px 0 rgba(15, 23, 42, 0.05);
+}
+
+.dark .glass-panel {
+  background: rgba(15, 23, 42, 0.65);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.09);
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.35);
+}
+
+.glass-panel-subtle {
+  background: rgba(255, 255, 255, 0.45);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(15, 23, 42, 0.05);
+}
+
+.dark .glass-panel-subtle {
+  background: rgba(30, 41, 59, 0.45);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.glass-card {
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(15, 23, 42, 0.07);
+  box-shadow: 0 4px 16px 0 rgba(15, 23, 42, 0.04);
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.glass-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px 0 rgba(15, 23, 42, 0.09);
+  border-color: rgba(15, 23, 42, 0.15);
+}
+
+.dark .glass-card {
+  background: rgba(26, 38, 57, 0.75);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: 0 4px 16px 0 rgba(0, 0, 0, 0.25);
+}
+
+.dark .glass-card:hover {
+  border-color: rgba(255, 255, 255, 0.18);
+  box-shadow: 0 8px 24px 0 rgba(0, 0, 0, 0.4);
+}
+
+/* Active focus card highlight (matches sketch CARD 2 reddish/rust tint) */
+.glass-card-active {
+  background: rgba(254, 242, 242, 0.88) !important;
+  border-color: rgba(194, 65, 12, 0.45) !important;
+  box-shadow: 0 0 25px 3px rgba(194, 65, 12, 0.2) !important;
+}
+
+.dark .glass-card-active {
+  background: rgba(69, 26, 12, 0.45) !important;
+  border-color: rgba(234, 88, 12, 0.5) !important;
+  box-shadow: 0 0 25px 3px rgba(194, 65, 12, 0.35) !important;
+}
+
+/* Completed card highlight (matches sketch CARD 1 green tint) */
+.glass-card-done {
+  background: rgba(240, 253, 244, 0.85) !important;
+  border-color: rgba(34, 197, 94, 0.4) !important;
+}
+
+.dark .glass-card-done {
+  background: rgba(20, 83, 45, 0.25) !important;
+  border-color: rgba(34, 197, 94, 0.35) !important;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(15, 23, 42, 0.15);
+  border-radius: 9999px;
+}
+
+.dark ::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.15);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(194, 65, 12, 0.5);
+}
